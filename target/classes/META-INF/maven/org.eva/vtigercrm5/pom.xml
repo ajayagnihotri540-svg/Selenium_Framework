@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eva</groupId>
+	<artifactId>vtigercrm5</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<!-- 1.There are three important dependencies will have to add
+			   But all dependencies should be related to "io.cucumber" and same version not different
+			   Which is given as below the line
+		     a.Cucumber JVM: Java :- cucumber-java
+		     b Cucumber JVM: JUnit 4:- cucumber-core
+			 c.Cucumber JVM: Core :- cucumber-junit
+			 
+			 2.Once the dependencies(jars) are downloaded inside the .m2(dot m2)[local repository] folders
+			   then if you again require same jars to set or download again then it doesn't download again
+			 3.Local Repository-Where it downloads as inside the local disk(.m2 folder)
+			                   - Address of local repository is .m2 folder
+			                   -whenever our .m2 is currupted then to resolve this problem 
+			                    simply we delete it and go to pom.xml and open and sava it then automatically
+			                    it creates a new fress .m2(local repository)
+			 4.Central repository- where all the repositories is downloaded from mvnrepository site
+			 5.Whenver we upadate maven project then sometimes we get error and we don't use
+			   driver.findElement(By.xpath("")).sendKeys(""); because it takes byDefault java
+			   compiler 1.5 version so to overcome this problem we set to above version of java
+			   compiler 1.6,1.7,1.8,1.9,1.10 ,11,12,13....till now version
+			   but when again update our maven project then again we face this type of problem 
+			   so to overcome this problem forever then we use this concept i.e given as below the line
+			   we can google -maven java compiler version to Setting the 
+			   source and -target of the Java Compiler...
+			 6.groupId:-groupid in Maven represents the id of the project group.
+			   for example-
+			              - org.eva
+			              - com.evs
+			 7.artiFactId - artifactid represents the id of the project.
+			  for example-
+			              - vtiger
+			              - vtigercrm5
+			8. src/main/java :-Contains the Java source code for the project
+			                   -for example : page wise classes and util class
+			 9. src/main/resources :-Contains resources that are used by the Java code.
+			                        -for example : the Java code, such as configuration files, images, 
+			                         and other static content.
+			 10.src/test/java :-Contains the Java source code for the unit tests for the project
+			 			       -for example : testscript and runner
+
+			 11.src/test/resources :- Contains resources that are used by the unit tests
+			                        -for example : feature file
+			 12.selenium repository is downloaded in this path
+			    C:\Users\hp\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver
+			    
+					 -->
+	<properties>
+		<maven.compiler.source>18</maven.compiler.source>
+		<maven.compiler.target>18</maven.compiler.target>
+	</properties>
+	
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.12.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.28</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.14.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>7.14.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>7.14.0</version>
+		</dependency>
+
+
+	</dependencies>
+</project>
